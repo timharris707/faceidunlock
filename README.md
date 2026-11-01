@@ -27,8 +27,8 @@ for your click, because any program can raise one.
 Releases are signed and notarized (checked by Apple's malware scan), so macOS opens the app without a
 warning. Get it only from this repo. It's tested on macOS 27.
 
-1. Download the zip from the [latest release](https://github.com/timharris707/faceidunlock/releases/latest), unzip it, and move
-   **Face ID Unlock** to the Applications folder in your home folder.
+1. Download `Face-ID-Unlock.dmg` from the [latest release](https://github.com/timharris707/faceidunlock/releases/latest),
+   open it, and drag **Face ID Unlock** to Applications.
 2. Open it. Its icon appears in the menu bar, not the Dock, and Settings opens on the
    [four steps](#the-four-steps) below. They take about a minute.
 3. Click **Test It Now** to watch it fill a real password box.
@@ -176,13 +176,13 @@ photo/screen detector at `Resources/MiniFASNet.mlpackage` (see `scripts/convert-
 ```sh
 swift test
 scripts/build-app.sh
-scripts/notarize.sh    # releases only: Apple's notary check, then the release zip
+scripts/notarize.sh    # releases only: Apple's notary check, then the release disk image
 ```
 
 The app is written to `.build/Face ID Unlock.app`; `scripts/notarize.sh` staples Apple's ticket to it and
-writes `.build/Face-ID-Unlock-<version>.zip`. To install it, quit any running copy first, then
-copy it to `~/Applications`, replacing the older copy. Set `FACEID_SIGNING_IDENTITY` to sign with
-another identity.
+builds the disk image people download, `.build/Face-ID-Unlock-<version>.dmg` (window art and layout in
+`docs/design/dmg`). To install a build, quit any running copy first, then copy it to `~/Applications`,
+replacing the older copy. Set `FACEID_SIGNING_IDENTITY` to sign with another identity.
 
 ## License
 
