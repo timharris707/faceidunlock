@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <!-- Hand-tuned 16 px: 14 px tile on whole pixels (1 px margin); 10 px iris with six blade tones; keyhole drawn on the pixel grid (4 px round head, soft 1 px nose, round chin, 2 px slot). -->
+  <defs>
+    <path id="tile" transform="translate(-0.69903 -0.69903) scale(0.0169903)" d="M381.28,100 L642.72,100 C723.72,100 764.21,100 807.8,113.78 C855.31,128.8 895.2,168.69 910.22,216.2 C924,259.79 924,300.28 924,381.28 L924,642.72 C924,723.72 924,764.21 910.22,807.8 C895.2,855.31 855.31,895.2 807.8,910.22 C764.21,924 723.72,924 642.72,924 L381.28,924 C300.28,924 259.79,924 216.2,910.22 C168.69,895.2 128.8,855.31 113.78,807.8 C100,764.21 100,723.72 100,642.72 L100,381.28 C100,300.28 100,259.79 113.78,216.2 C128.8,168.69 168.69,128.8 216.2,113.78 C259.79,100 300.28,100 381.28,100 Z"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#293A5E"/>
+      <stop offset="1" stop-color="#080C16"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="3" x2="0" y2="13" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4F6F8"/>
+      <stop offset="1" stop-color="#97A0AC"/>
+    </linearGradient>
+    <clipPath id="disc"><circle cx="8" cy="8" r="5"/></clipPath>
+    <mask id="khMask" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+      <rect width="16" height="16" fill="#fff"/>
+      <g fill="#000">
+        <rect x="7" y="4" width="2" height="1"/>
+        <rect x="6" y="5" width="4" height="2"/>
+        <rect x="7" y="7" width="2" height="4"/>
+      </g>
+      <g fill="#000" fill-opacity="0.55">
+        <rect x="6" y="4" width="1" height="1"/>
+        <rect x="9" y="4" width="1" height="1"/>
+        <rect x="6" y="7" width="1" height="1"/>
+      </g>
+      <!-- face: a fuller, rounder chin and a softer nose -->
+      <rect x="9" y="7" width="1" height="1" fill="#000" fill-opacity="0.7"/>
+      <rect x="10" y="6" width="1" height="1" fill="#000" fill-opacity="0.45"/>
+    </mask>
+  </defs>
+  <use href="#tile" fill="url(#bg)"/>
+  <g mask="url(#khMask)">
+    <circle cx="8" cy="8" r="5" fill="url(#metal)"/>
+    <g clip-path="url(#disc)">
+    <path d="M8 8L8.13 7.52A5.2 5.2 0 0 1 13.49 7.71A5.5 5.5 0 0 1 11.00 12.61A5.2 5.2 0 0 0 8.48 7.87Z" fill="#0A1222" fill-opacity="0.098"/>
+    <path d="M8 8L8.48 7.87A5.2 5.2 0 0 1 11.00 12.61A5.5 5.5 0 0 1 5.50 12.90A5.2 5.2 0 0 0 8.35 8.35Z" fill="#0A1222" fill-opacity="0.120"/>
+    <path d="M8 8L8.35 8.35A5.2 5.2 0 0 1 5.50 12.90A5.5 5.5 0 0 1 2.51 8.29A5.2 5.2 0 0 0 7.87 8.48Z" fill="#0A1222" fill-opacity="0.208"/>
+    <path d="M8 8L7.87 8.48A5.2 5.2 0 0 1 2.51 8.29A5.5 5.5 0 0 1 5.00 3.39A5.2 5.2 0 0 0 7.52 8.13Z" fill="#FFFFFF" fill-opacity="0.098"/>
+    <path d="M8 8L7.52 8.13A5.2 5.2 0 0 1 5.00 3.39A5.5 5.5 0 0 1 10.50 3.10A5.2 5.2 0 0 0 7.65 7.65Z" fill="#FFFFFF" fill-opacity="0.120"/>
+    <path d="M8 8L7.65 7.65A5.2 5.2 0 0 1 10.50 3.10A5.5 5.5 0 0 1 13.49 7.71A5.2 5.2 0 0 0 8.13 7.52Z" fill="#FFFFFF" fill-opacity="0.208"/>
+    </g>
+  </g>
+</svg>

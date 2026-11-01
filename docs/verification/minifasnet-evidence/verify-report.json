@@ -1,0 +1,833 @@
+{
+ "checkpoints": {
+  "v2_keys": 334,
+  "v2_params": 434560,
+  "v2_first_key": "module.conv1.conv.weight",
+  "v1se_keys": 370,
+  "v1se_params": 433586,
+  "v1se_first_key": "module.conv1.conv.weight"
+ },
+ "spec": {
+  "specificationVersion": 7,
+  "type": "mlProgram",
+  "inputs": [
+   [
+    "crop27",
+    "multiArrayType",
+    [
+     1,
+     3,
+     80,
+     80
+    ],
+    65568
+   ],
+   [
+    "crop40",
+    "multiArrayType",
+    [
+     1,
+     3,
+     80,
+     80
+    ],
+    65568
+   ]
+  ],
+  "outputs": [
+   [
+    "real",
+    "multiArrayType",
+    [
+     1
+    ],
+    65568
+   ],
+   [
+    "probs27",
+    "multiArrayType",
+    [
+     1,
+     3
+    ],
+    65568
+   ],
+   [
+    "probs40",
+    "multiArrayType",
+    [
+     1,
+     3
+    ],
+    65568
+   ]
+  ],
+  "metadata": {
+   "author": "Minivision (Silent-Face-Anti-Spoofing); converted for FaceID Unlock",
+   "license": "Apache-2.0; see ThirdParty/MiniFASNet-LICENSE",
+   "short": "Silent-Face-Anti-Spoofing MiniFASNet pair (2.7x MiniFASNetV2 + 4.0x MiniFASNetV1SE): face crops to mean real-face probability",
+   "user": {
+    "com.github.apple.coremltools.version": "9.0",
+    "sha256_4_0_0_80x80_MiniFASNetV1SE.pth": "84ee1d37d96894d5e82de5a57df044ef80a58be2b218b5ed7cdfd875ec2f5990",
+    "source_revision": "b6d5f04ad78778917853b25c778acef6d5626d15",
+    "sha256_2.7_80x80_MiniFASNetV2.pth": "a5eb02e1843f19b5386b953cc4c9f011c3f985d0ee2bb9819eea9a142099bec0",
+    "com.github.apple.coremltools.conversion_date": "2026-10-30",
+    "com.github.apple.coremltools.source_dialect": "TorchScript",
+    "com.github.apple.coremltools.source": "torch==2.7.0",
+    "source_repository": "https://github.com/minivision-ai/Silent-Face-Anti-Spoofing"
+   }
+  },
+  "op_counts": {
+   "const": 834,
+   "conv": 104,
+   "prelu": 66,
+   "add": 25,
+   "reshape": 2,
+   "linear": 4,
+   "expand_dims": 2,
+   "batch_norm": 2,
+   "squeeze": 2,
+   "softmax": 2,
+   "reduce_mean": 3,
+   "relu": 3,
+   "sigmoid": 3,
+   "mul": 4,
+   "slice_by_index": 2
+  },
+  "op_output_dtypes": [
+   1,
+   2,
+   11,
+   23
+  ]
+ },
+ "random": {
+  "count": 30,
+  "max_diff": {
+   "cpu_only": 9.5367431640625e-07,
+   "all": 9.5367431640625e-07,
+   "cpu_and_ne": 9.5367431640625e-07,
+   "cpu_and_gpu": 9.5367431640625e-07
+  },
+  "class_agree": {
+   "cpu_only": true,
+   "all": true,
+   "cpu_and_ne": true,
+   "cpu_and_gpu": true
+  },
+  "min_swapped_wiring_diff": 0.0005030632019042969,
+  "torch_real_range": [
+   0.18829573690891266,
+   0.9993311762809753
+  ],
+  "rows": [
+   {
+    "torch_real": 0.9922654032707214,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 5.960464477539063e-08,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9922653436660767,
+    "swapped_wiring_diff": 0.006545007228851318,
+    "all_maxdiff": 5.960464477539063e-08,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 5.960464477539063e-08,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 5.960464477539063e-08,
+    "cpu_and_gpu_class": 1,
+    "kind": "uniform"
+   },
+   {
+    "torch_real": 0.993122935295105,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 1.1920928955078125e-07,
+    "cpu_only_class": 1,
+    "coreml_real": 0.993122935295105,
+    "swapped_wiring_diff": 0.0017910003662109375,
+    "all_maxdiff": 1.1920928955078125e-07,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 1.1920928955078125e-07,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 1.1920928955078125e-07,
+    "cpu_and_gpu_class": 1,
+    "kind": "integer"
+   },
+   {
+    "torch_real": 0.33046650886535645,
+    "torch_class": 2,
+    "cpu_only_maxdiff": 9.08970832824707e-07,
+    "cpu_only_class": 2,
+    "coreml_real": 0.33046644926071167,
+    "swapped_wiring_diff": 0.49516260623931885,
+    "all_maxdiff": 9.08970832824707e-07,
+    "all_class": 2,
+    "cpu_and_ne_maxdiff": 9.08970832824707e-07,
+    "cpu_and_ne_class": 2,
+    "cpu_and_gpu_maxdiff": 9.08970832824707e-07,
+    "cpu_and_gpu_class": 2,
+    "kind": "smooth"
+   },
+   {
+    "torch_real": 0.9183827638626099,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 9.685754776000977e-08,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9183828234672546,
+    "swapped_wiring_diff": 0.09457844495773315,
+    "all_maxdiff": 9.685754776000977e-08,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 9.685754776000977e-08,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 9.685754776000977e-08,
+    "cpu_and_gpu_class": 1,
+    "kind": "skin"
+   },
+   {
+    "torch_real": 0.998735785484314,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 2.444721758365631e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.998735785484314,
+    "swapped_wiring_diff": 0.0008155703544616699,
+    "all_maxdiff": 2.444721758365631e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 2.444721758365631e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 2.444721758365631e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "wide"
+   },
+   {
+    "torch_real": 0.9956706762313843,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 5.587935447692871e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9956706762313843,
+    "swapped_wiring_diff": 0.0038729310035705566,
+    "all_maxdiff": 5.587935447692871e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 5.587935447692871e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 5.587935447692871e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "uniform"
+   },
+   {
+    "torch_real": 0.9914717674255371,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 1.3969838619232178e-08,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9914717674255371,
+    "swapped_wiring_diff": 0.0067542195320129395,
+    "all_maxdiff": 1.3969838619232178e-08,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 1.3969838619232178e-08,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 1.3969838619232178e-08,
+    "cpu_and_gpu_class": 1,
+    "kind": "integer"
+   },
+   {
+    "torch_real": 0.3829968273639679,
+    "torch_class": 2,
+    "cpu_only_maxdiff": 9.5367431640625e-07,
+    "cpu_only_class": 2,
+    "coreml_real": 0.3829963505268097,
+    "swapped_wiring_diff": 0.637915849685669,
+    "all_maxdiff": 9.5367431640625e-07,
+    "all_class": 2,
+    "cpu_and_ne_maxdiff": 9.5367431640625e-07,
+    "cpu_and_ne_class": 2,
+    "cpu_and_gpu_maxdiff": 9.5367431640625e-07,
+    "cpu_and_gpu_class": 2,
+    "kind": "smooth"
+   },
+   {
+    "torch_real": 0.8711466789245605,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 2.384185791015625e-07,
+    "cpu_only_class": 1,
+    "coreml_real": 0.8711467981338501,
+    "swapped_wiring_diff": 0.10455884784460068,
+    "all_maxdiff": 2.384185791015625e-07,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 2.384185791015625e-07,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 2.384185791015625e-07,
+    "cpu_and_gpu_class": 1,
+    "kind": "skin"
+   },
+   {
+    "torch_real": 0.9973222017288208,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 1.862645149230957e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9973222017288208,
+    "swapped_wiring_diff": 0.0037743449211120605,
+    "all_maxdiff": 1.862645149230957e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 1.862645149230957e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 1.862645149230957e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "wide"
+   },
+   {
+    "torch_real": 0.9936150908470154,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 2.7939677238464355e-08,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9936150908470154,
+    "swapped_wiring_diff": 0.005748391151428223,
+    "all_maxdiff": 2.7939677238464355e-08,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 2.7939677238464355e-08,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 2.7939677238464355e-08,
+    "cpu_and_gpu_class": 1,
+    "kind": "uniform"
+   },
+   {
+    "torch_real": 0.9963123798370361,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 6.51925802230835e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9963123798370361,
+    "swapped_wiring_diff": 0.0014418710488826036,
+    "all_maxdiff": 6.51925802230835e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 6.51925802230835e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 6.51925802230835e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "integer"
+   },
+   {
+    "torch_real": 0.38666245341300964,
+    "torch_class": 2,
+    "cpu_only_maxdiff": 8.642673492431641e-07,
+    "cpu_only_class": 2,
+    "coreml_real": 0.3866625130176544,
+    "swapped_wiring_diff": 0.3206767439842224,
+    "all_maxdiff": 8.642673492431641e-07,
+    "all_class": 2,
+    "cpu_and_ne_maxdiff": 8.642673492431641e-07,
+    "cpu_and_ne_class": 2,
+    "cpu_and_gpu_maxdiff": 8.642673492431641e-07,
+    "cpu_and_gpu_class": 2,
+    "kind": "smooth"
+   },
+   {
+    "torch_real": 0.9231611490249634,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 2.384185791015625e-07,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9231612086296082,
+    "swapped_wiring_diff": 0.1078566312789917,
+    "all_maxdiff": 2.384185791015625e-07,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 2.384185791015625e-07,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 2.384185791015625e-07,
+    "cpu_and_gpu_class": 1,
+    "kind": "skin"
+   },
+   {
+    "torch_real": 0.9993311762809753,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 3.259629011154175e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9993311762809753,
+    "swapped_wiring_diff": 0.001251220703125,
+    "all_maxdiff": 3.259629011154175e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 3.259629011154175e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 3.259629011154175e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "wide"
+   },
+   {
+    "torch_real": 0.9935431480407715,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 5.820766091346741e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9935431480407715,
+    "swapped_wiring_diff": 0.0040596723556518555,
+    "all_maxdiff": 5.820766091346741e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 5.820766091346741e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 5.820766091346741e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "uniform"
+   },
+   {
+    "torch_real": 0.9907780885696411,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 1.5366822481155396e-08,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9907780885696411,
+    "swapped_wiring_diff": 0.005437254905700684,
+    "all_maxdiff": 1.5366822481155396e-08,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 1.5366822481155396e-08,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 1.5366822481155396e-08,
+    "cpu_and_gpu_class": 1,
+    "kind": "integer"
+   },
+   {
+    "torch_real": 0.18829573690891266,
+    "torch_class": 2,
+    "cpu_only_maxdiff": 1.1920928955078125e-07,
+    "cpu_only_class": 2,
+    "coreml_real": 0.18829567730426788,
+    "swapped_wiring_diff": 0.4814836382865906,
+    "all_maxdiff": 1.1920928955078125e-07,
+    "all_class": 2,
+    "cpu_and_ne_maxdiff": 1.1920928955078125e-07,
+    "cpu_and_ne_class": 2,
+    "cpu_and_gpu_maxdiff": 1.1920928955078125e-07,
+    "cpu_and_gpu_class": 2,
+    "kind": "smooth"
+   },
+   {
+    "torch_real": 0.8967589735984802,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 2.384185791015625e-07,
+    "cpu_only_class": 1,
+    "coreml_real": 0.896759033203125,
+    "swapped_wiring_diff": 0.02655257284641266,
+    "all_maxdiff": 2.384185791015625e-07,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 2.384185791015625e-07,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 2.384185791015625e-07,
+    "cpu_and_gpu_class": 1,
+    "kind": "skin"
+   },
+   {
+    "torch_real": 0.9990217685699463,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 1.5425030142068863e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9990217685699463,
+    "swapped_wiring_diff": 0.0005030632019042969,
+    "all_maxdiff": 1.5425030142068863e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 1.5425030142068863e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 1.5425030142068863e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "wide"
+   },
+   {
+    "torch_real": 0.9935029745101929,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 9.42964106798172e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9935029745101929,
+    "swapped_wiring_diff": 0.009614527225494385,
+    "all_maxdiff": 9.42964106798172e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 9.42964106798172e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 9.42964106798172e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "uniform"
+   },
+   {
+    "torch_real": 0.9938920140266418,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 1.1920928955078125e-07,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9938920736312866,
+    "swapped_wiring_diff": 0.014308393001556396,
+    "all_maxdiff": 1.1920928955078125e-07,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 1.1920928955078125e-07,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 1.1920928955078125e-07,
+    "cpu_and_gpu_class": 1,
+    "kind": "integer"
+   },
+   {
+    "torch_real": 0.3404698371887207,
+    "torch_class": 2,
+    "cpu_only_maxdiff": 1.4901161193847656e-07,
+    "cpu_only_class": 2,
+    "coreml_real": 0.3404698669910431,
+    "swapped_wiring_diff": 0.5659845471382141,
+    "all_maxdiff": 1.4901161193847656e-07,
+    "all_class": 2,
+    "cpu_and_ne_maxdiff": 1.4901161193847656e-07,
+    "cpu_and_ne_class": 2,
+    "cpu_and_gpu_maxdiff": 1.4901161193847656e-07,
+    "cpu_and_gpu_class": 2,
+    "kind": "smooth"
+   },
+   {
+    "torch_real": 0.9310258030891418,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 4.172325134277344e-07,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9310259819030762,
+    "swapped_wiring_diff": 0.05309957265853882,
+    "all_maxdiff": 4.172325134277344e-07,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 4.172325134277344e-07,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 4.172325134277344e-07,
+    "cpu_and_gpu_class": 1,
+    "kind": "skin"
+   },
+   {
+    "torch_real": 0.9977160096168518,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 1.1641532182693481e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9977160096168518,
+    "swapped_wiring_diff": 0.0024106502532958984,
+    "all_maxdiff": 1.1641532182693481e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 1.1641532182693481e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 1.1641532182693481e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "wide"
+   },
+   {
+    "torch_real": 0.9937748312950134,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 8.847564458847046e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9937748312950134,
+    "swapped_wiring_diff": 0.0035546172875910997,
+    "all_maxdiff": 8.847564458847046e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 8.847564458847046e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 8.847564458847046e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "uniform"
+   },
+   {
+    "torch_real": 0.9950422048568726,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 6.984919309616089e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9950422048568726,
+    "swapped_wiring_diff": 0.005356252193450928,
+    "all_maxdiff": 6.984919309616089e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 6.984919309616089e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 6.984919309616089e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "integer"
+   },
+   {
+    "torch_real": 0.28548693656921387,
+    "torch_class": 2,
+    "cpu_only_maxdiff": 9.5367431640625e-07,
+    "cpu_only_class": 2,
+    "coreml_real": 0.28548672795295715,
+    "swapped_wiring_diff": 0.618797779083252,
+    "all_maxdiff": 9.5367431640625e-07,
+    "all_class": 2,
+    "cpu_and_ne_maxdiff": 9.5367431640625e-07,
+    "cpu_and_ne_class": 2,
+    "cpu_and_gpu_maxdiff": 9.5367431640625e-07,
+    "cpu_and_gpu_class": 2,
+    "kind": "smooth"
+   },
+   {
+    "torch_real": 0.9285379648208618,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 3.5762786865234375e-07,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9285381436347961,
+    "swapped_wiring_diff": 0.009872853755950928,
+    "all_maxdiff": 3.5762786865234375e-07,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 3.5762786865234375e-07,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 3.5762786865234375e-07,
+    "cpu_and_gpu_class": 1,
+    "kind": "skin"
+   },
+   {
+    "torch_real": 0.9986699819564819,
+    "torch_class": 1,
+    "cpu_only_maxdiff": 3.259629011154175e-09,
+    "cpu_only_class": 1,
+    "coreml_real": 0.9986699819564819,
+    "swapped_wiring_diff": 0.0007832646369934082,
+    "all_maxdiff": 3.259629011154175e-09,
+    "all_class": 1,
+    "cpu_and_ne_maxdiff": 3.259629011154175e-09,
+    "cpu_and_ne_class": 1,
+    "cpu_and_gpu_maxdiff": 3.259629011154175e-09,
+    "cpu_and_gpu_class": 1,
+    "kind": "wide"
+   }
+  ]
+ },
+ "samples": [
+  {
+   "torch_probs27": [
+    0.08382904529571533,
+    0.0011403665412217379,
+    0.9150305986404419
+   ],
+   "torch_probs40": [
+    0.3010868728160858,
+    0.16755272448062897,
+    0.531360387802124
+   ],
+   "torch_real": 0.08434654772281647,
+   "torch_class": 2,
+   "cpu_only_maxdiff": 1.9073486328125e-06,
+   "cpu_only_class": 2,
+   "coreml_real": 0.08434603363275528,
+   "coreml_probs27": [
+    0.08382854610681534,
+    0.0011403682874515653,
+    0.9150310754776001
+   ],
+   "coreml_probs40": [
+    0.30108603835105896,
+    0.1675516963005066,
+    0.5313622951507568
+   ],
+   "swapped_wiring_diff": 1.9073486328125e-06,
+   "all_maxdiff": 1.9073486328125e-06,
+   "all_class": 2,
+   "cpu_and_ne_maxdiff": 1.9073486328125e-06,
+   "cpu_and_ne_class": 2,
+   "cpu_and_gpu_maxdiff": 1.9073486328125e-06,
+   "cpu_and_gpu_class": 2,
+   "image": "F1",
+   "label": "spoof",
+   "shape_hw": [
+    640,
+    480
+   ],
+   "bbox_xywh": [
+    178,
+    136,
+    222,
+    224
+   ],
+   "det_conf": 0.9925099611282349,
+   "crop27_ltrb": [
+    0,
+    6,
+    479,
+    489
+   ],
+   "scale27": 2.1576576576576576,
+   "crop40_ltrb": [
+    0,
+    6,
+    479,
+    489
+   ],
+   "scale40": 2.1576576576576576,
+   "crops_identical": true,
+   "predicted": "spoof",
+   "upstream_style_score": 0.723195493221283,
+   "matches_label": true,
+   "result_image_rect_lines": {
+    "rows": [
+     135,
+     136,
+     137,
+     360,
+     361,
+     362
+    ],
+    "cols": [
+     177,
+     178,
+     179,
+     400,
+     401,
+     402
+    ]
+   }
+  },
+  {
+   "torch_probs27": [
+    0.00016157166101038456,
+    0.0006388759356923401,
+    0.9991995692253113
+   ],
+   "torch_probs40": [
+    0.002955194329842925,
+    0.3619326055049896,
+    0.6351122260093689
+   ],
+   "torch_real": 0.18128573894500732,
+   "torch_class": 2,
+   "cpu_only_maxdiff": 1.1920928955078125e-07,
+   "cpu_only_class": 2,
+   "coreml_real": 0.18128567934036255,
+   "coreml_probs27": [
+    0.00016157196660060436,
+    0.000638874713331461,
+    0.9991995692253113
+   ],
+   "coreml_probs40": [
+    0.0029551892075687647,
+    0.3619324862957001,
+    0.6351123452186584
+   ],
+   "swapped_wiring_diff": 1.1920928955078125e-07,
+   "all_maxdiff": 1.1920928955078125e-07,
+   "all_class": 2,
+   "cpu_and_ne_maxdiff": 1.1920928955078125e-07,
+   "cpu_and_ne_class": 2,
+   "cpu_and_gpu_maxdiff": 1.1920928955078125e-07,
+   "cpu_and_gpu_class": 2,
+   "image": "F2",
+   "label": "spoof",
+   "shape_hw": [
+    640,
+    480
+   ],
+   "bbox_xywh": [
+    120,
+    252,
+    252,
+    256
+   ],
+   "det_conf": 0.9913977384567261,
+   "crop27_ltrb": [
+    0,
+    136,
+    479,
+    623
+   ],
+   "scale27": 1.9007936507936507,
+   "crop40_ltrb": [
+    0,
+    136,
+    479,
+    623
+   ],
+   "scale40": 1.9007936507936507,
+   "crops_identical": true,
+   "predicted": "spoof",
+   "upstream_style_score": 0.8171558976173401,
+   "matches_label": true,
+   "result_image_rect_lines": {
+    "rows": [
+     251,
+     252,
+     253,
+     507,
+     508,
+     509
+    ],
+    "cols": [
+     119,
+     120,
+     121,
+     371,
+     372,
+     373
+    ]
+   }
+  },
+  {
+   "torch_probs27": [
+    0.00010470777488080785,
+    0.9928066730499268,
+    0.00708860345184803
+   ],
+   "torch_probs40": [
+    1.666217031015549e-05,
+    0.9967306852340698,
+    0.0032526955474168062
+   ],
+   "torch_real": 0.9947686791419983,
+   "torch_class": 1,
+   "cpu_only_maxdiff": 2.3748725652694702e-08,
+   "cpu_only_class": 1,
+   "coreml_real": 0.9947686791419983,
+   "coreml_probs27": [
+    0.00010470837878528982,
+    0.9928066730499268,
+    0.007088579703122377
+   ],
+   "coreml_probs40": [
+    1.6662044799886644e-05,
+    0.9967306852340698,
+    0.003252676920965314
+   ],
+   "swapped_wiring_diff": 2.3748725652694702e-08,
+   "all_maxdiff": 2.3748725652694702e-08,
+   "all_class": 1,
+   "cpu_and_ne_maxdiff": 2.3748725652694702e-08,
+   "cpu_and_ne_class": 1,
+   "cpu_and_gpu_maxdiff": 2.3748725652694702e-08,
+   "cpu_and_gpu_class": 1,
+   "image": "T1",
+   "label": "real",
+   "shape_hw": [
+    640,
+    480
+   ],
+   "bbox_xywh": [
+    105,
+    147,
+    207,
+    214
+   ],
+   "det_conf": 0.9835947155952454,
+   "crop27_ltrb": [
+    0,
+    6,
+    479,
+    501
+   ],
+   "scale27": 2.314009661835749,
+   "crop40_ltrb": [
+    0,
+    6,
+    479,
+    501
+   ],
+   "scale40": 2.314009661835749,
+   "crops_identical": true,
+   "predicted": "real",
+   "upstream_style_score": 0.9947686791419983,
+   "matches_label": true,
+   "result_image_rect_lines": {
+    "rows": [
+     146,
+     147,
+     360,
+     361
+    ],
+    "cols": [
+     106,
+     107,
+     312,
+     313
+    ]
+   }
+  }
+ ],
+ "latency_ms": {
+  "cpu_only": {
+   "median": 0.8928954921429977,
+   "p95": 0.9550628135912119
+  },
+  "all": {
+   "median": 0.894374999916181,
+   "p95": 0.9468982520047575
+  }
+ }
+}

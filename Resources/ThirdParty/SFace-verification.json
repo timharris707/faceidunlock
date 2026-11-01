@@ -1,0 +1,287 @@
+{
+  "source_revision": "47534e27c9851bb1128ccc0102f1145e27f23f98",
+  "source_sha256": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "python": "3.12.13",
+  "dependencies": {
+    "numpy": "2.5.3",
+    "torch": "2.7.0",
+    "onnx": "1.18.0",
+    "onnxruntime": "1.22.0",
+    "coremltools": "9.0"
+  },
+  "operations": {
+    "Sub": 1,
+    "Mul": 1,
+    "Conv": 27,
+    "BatchNormalization": 29,
+    "PRelu": 27,
+    "Dropout": 1,
+    "Flatten": 1,
+    "Gemm": 1
+  },
+  "package_sha256": {
+    "Data/com.apple.CoreML/model.mlmodel": "aec901bd3610996bf89c5b50187accd64ec25e988815b8a380afc1021950711b",
+    "Data/com.apple.CoreML/weights/weight.bin": "240e41ec5a9ce9673d6b3b709f730a659220aca68ef9605ecfc2ae258c6c6c84",
+    "Manifest.json": "1fa53440345f28b79af21ff8655428de7d86fb560e4854aa0583d45baf952406"
+  },
+  "thresholds": {
+    "pytorch_relative_l2_error": 0.0001,
+    "coreml_relative_l2_error": 0.001,
+    "coreml_cosine_drift": 1e-06
+  },
+  "results": [
+    {
+      "backend": "pytorch",
+      "fixture": "black",
+      "max_absolute_error": 1.5094876289367676e-05,
+      "relative_l2_error": 2.6091401638855507e-05,
+      "cosine_drift": 3.3238312102668033e-10
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "white",
+      "max_absolute_error": 1.6689300537109375e-06,
+      "relative_l2_error": 1.3296168453428793e-06,
+      "cosine_drift": 8.102407633714392e-13
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "midgray",
+      "max_absolute_error": 1.4007091522216797e-06,
+      "relative_l2_error": 1.4320220226582806e-06,
+      "cosine_drift": 8.958389585700388e-13
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "rgb_gradient",
+      "max_absolute_error": 1.9669532775878906e-06,
+      "relative_l2_error": 1.355530878695396e-06,
+      "cosine_drift": 8.776313009661862e-13
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "seeded_noise_0",
+      "max_absolute_error": 1.6093254089355469e-06,
+      "relative_l2_error": 1.5202067638044616e-06,
+      "cosine_drift": 1.1550760348200129e-12
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "seeded_noise_1",
+      "max_absolute_error": 1.4901161193847656e-06,
+      "relative_l2_error": 1.610415113628771e-06,
+      "cosine_drift": 1.2890799538922693e-12
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "seeded_noise_2",
+      "max_absolute_error": 1.6130506992340088e-06,
+      "relative_l2_error": 1.4796452831217233e-06,
+      "cosine_drift": 1.088129586435116e-12
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "seeded_noise_3",
+      "max_absolute_error": 1.7285346984863281e-06,
+      "relative_l2_error": 1.3030898222879635e-06,
+      "cosine_drift": 8.475442569988445e-13
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "seeded_noise_4",
+      "max_absolute_error": 1.6689300537109375e-06,
+      "relative_l2_error": 1.4168904087893653e-06,
+      "cosine_drift": 9.308109838457312e-13
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "seeded_noise_5",
+      "max_absolute_error": 1.7285346984863281e-06,
+      "relative_l2_error": 1.662644534050499e-06,
+      "cosine_drift": 1.379674152701682e-12
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "seeded_noise_6",
+      "max_absolute_error": 1.6391277313232422e-06,
+      "relative_l2_error": 1.5146751676890398e-06,
+      "cosine_drift": 1.1428635815491361e-12
+    },
+    {
+      "backend": "pytorch",
+      "fixture": "seeded_noise_7",
+      "max_absolute_error": 1.8849968910217285e-06,
+      "relative_l2_error": 1.4023095225180753e-06,
+      "cosine_drift": 9.831024883055761e-13
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "black",
+      "max_absolute_error": 1.9848346710205078e-05,
+      "relative_l2_error": 3.359351644046617e-05,
+      "cosine_drift": 5.550744308635558e-10
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "white",
+      "max_absolute_error": 4.32133674621582e-06,
+      "relative_l2_error": 3.4400026074150757e-06,
+      "cosine_drift": 5.689670956599002e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "midgray",
+      "max_absolute_error": 1.8775463104248047e-06,
+      "relative_l2_error": 2.192221859892318e-06,
+      "cosine_drift": 2.34123831432953e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "rgb_gradient",
+      "max_absolute_error": 2.384185791015625e-06,
+      "relative_l2_error": 1.543295409312285e-06,
+      "cosine_drift": 1.1327605520250472e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "seeded_noise_0",
+      "max_absolute_error": 1.8477439880371094e-06,
+      "relative_l2_error": 1.5678736858360842e-06,
+      "cosine_drift": 1.1337597527472099e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "seeded_noise_1",
+      "max_absolute_error": 1.7881393432617188e-06,
+      "relative_l2_error": 1.805839781678479e-06,
+      "cosine_drift": 1.4973577933119486e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "seeded_noise_2",
+      "max_absolute_error": 2.0712614059448242e-06,
+      "relative_l2_error": 1.6588333795084681e-06,
+      "cosine_drift": 1.3629097850298422e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "seeded_noise_3",
+      "max_absolute_error": 1.7881393432617188e-06,
+      "relative_l2_error": 1.6389364020453199e-06,
+      "cosine_drift": 1.1972645097557688e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "seeded_noise_4",
+      "max_absolute_error": 1.4901161193847656e-06,
+      "relative_l2_error": 1.5990898216292232e-06,
+      "cosine_drift": 1.0975664821444298e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "seeded_noise_5",
+      "max_absolute_error": 2.205371856689453e-06,
+      "relative_l2_error": 2.390781815776683e-06,
+      "cosine_drift": 2.171152146956956e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "seeded_noise_6",
+      "max_absolute_error": 2.0638108253479004e-06,
+      "relative_l2_error": 1.7424020995417957e-06,
+      "cosine_drift": 1.2425616091604752e-12
+    },
+    {
+      "backend": "coreml_cpu_only",
+      "fixture": "seeded_noise_7",
+      "max_absolute_error": 1.9669532775878906e-06,
+      "relative_l2_error": 1.4709395686155983e-06,
+      "cosine_drift": 9.509060205914466e-13
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "black",
+      "max_absolute_error": 2.0213425159454346e-05,
+      "relative_l2_error": 3.422936634808383e-05,
+      "cosine_drift": 5.782956336020106e-10
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "white",
+      "max_absolute_error": 3.814697265625e-06,
+      "relative_l2_error": 3.1599601385921563e-06,
+      "cosine_drift": 4.98079355537584e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "midgray",
+      "max_absolute_error": 2.384185791015625e-06,
+      "relative_l2_error": 1.960465576373932e-06,
+      "cosine_drift": 1.8877122087701537e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "rgb_gradient",
+      "max_absolute_error": 2.3245811462402344e-06,
+      "relative_l2_error": 1.5063693234302441e-06,
+      "cosine_drift": 1.08169029289229e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "seeded_noise_0",
+      "max_absolute_error": 1.6763806343078613e-06,
+      "relative_l2_error": 1.5435106097742698e-06,
+      "cosine_drift": 1.1005640843109177e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "seeded_noise_1",
+      "max_absolute_error": 1.9669532775878906e-06,
+      "relative_l2_error": 1.6530966566040269e-06,
+      "cosine_drift": 1.3379297669757761e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "seeded_noise_2",
+      "max_absolute_error": 2.041459083557129e-06,
+      "relative_l2_error": 1.5594162817743807e-06,
+      "cosine_drift": 1.1933787291695808e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "seeded_noise_3",
+      "max_absolute_error": 1.7285346984863281e-06,
+      "relative_l2_error": 1.5310007036157404e-06,
+      "cosine_drift": 1.0886846979474285e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "seeded_noise_4",
+      "max_absolute_error": 2.1457672119140625e-06,
+      "relative_l2_error": 1.701733896190325e-06,
+      "cosine_drift": 1.290301199219357e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "seeded_noise_5",
+      "max_absolute_error": 2.1457672119140625e-06,
+      "relative_l2_error": 2.10729633403939e-06,
+      "cosine_drift": 1.8230972287369696e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "seeded_noise_6",
+      "max_absolute_error": 2.294778823852539e-06,
+      "relative_l2_error": 1.8012799036384516e-06,
+      "cosine_drift": 1.4312995233467518e-12
+    },
+    {
+      "backend": "coreml_all",
+      "fixture": "seeded_noise_7",
+      "max_absolute_error": 1.6391277313232422e-06,
+      "relative_l2_error": 1.3675761724714348e-06,
+      "cosine_drift": 8.552047958687581e-13
+    }
+  ]
+}

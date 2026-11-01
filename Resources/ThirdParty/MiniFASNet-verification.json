@@ -1,0 +1,816 @@
+{
+  "source_repository": "https://github.com/minivision-ai/Silent-Face-Anti-Spoofing",
+  "source_revision": "b6d5f04ad78778917853b25c778acef6d5626d15",
+  "pinned_sha256": {
+    "resources/anti_spoof_models/2.7_80x80_MiniFASNetV2.pth": "a5eb02e1843f19b5386b953cc4c9f011c3f985d0ee2bb9819eea9a142099bec0",
+    "resources/anti_spoof_models/4_0_0_80x80_MiniFASNetV1SE.pth": "84ee1d37d96894d5e82de5a57df044ef80a58be2b218b5ed7cdfd875ec2f5990",
+    "resources/detection_model/deploy.prototxt": "9fe2f141b4baee039ed9442da2833e216af40a6ff3e639e7b39258812bcda808",
+    "resources/detection_model/Widerface-RetinaFace.caffemodel": "d08338a2c207df16a9c566f767fea67fb43ba6fff76ce11e938fe3fabefb9402",
+    "LICENSE": "daf94bf1dc9cc5700fe5af2c7c0cbd1836e70d509ed78fd0bebef7432edee6fb",
+    "images/sample/image_F1.jpg": "4b11b5d7a8a8e4a88f5f16a5426a0a7692e39e5bb45bb03b4ebe5e1606336860",
+    "images/sample/image_F2.jpg": "fbbea73450ae9d9bb555c8ccac77bf39d234261fe3be4190e3ed2999690c485f",
+    "images/sample/image_T1.jpg": "f4455149f488f76205fdee5499ec5261d08ef6279a1cff7b778ea85405331e94",
+    "src/model_lib/MiniFASNet.py": "e498c4ec5e1ddfaba62b941a126c19d65aa564999f3309661fe43ee8bf38acd7",
+    "src/generate_patches.py": "cd33552d5ca920088143daafceba3c19b7a64bf9aac125241803e1b4af698d65",
+    "src/anti_spoof_predict.py": "ce95918e5a19895781877a1ac5c8d3b2d753579c1709664a0ea8f9259ce43f93",
+    "src/data_io/functional.py": "8f779a775e01485800368e8a11104c49c8ba602629927e19ea223b74ff946898",
+    "src/utility.py": "cff329a47f4f284465126b19adb080343942a2f2014e862dc85e1e7c2f9d1421",
+    "test.py": "a6a6f053ac899b22607e7e9220742ce882aa4474e0395eebd5a502f3956b233b"
+  },
+  "downloaded_files_sha256": {
+    ".gitignore": "b6d5281f2e97bd8507de6697c0d40a8d87be62d9efba7371e1d1749b58cbbe68",
+    "LICENSE": "daf94bf1dc9cc5700fe5af2c7c0cbd1836e70d509ed78fd0bebef7432edee6fb",
+    "README.md": "b53d4c13fde0bb0e96abf1fe8b1fbf3d6493015f1a6ace4f343e1dea11b65554",
+    "README_EN.md": "06662080d7ea44934d4fe9b20ceeeb8bc1c71beaa001d9e242998d3b0b4f3060",
+    "datasets/README.md": "ce79325a15d01c41117cbca4a3480781c8124838b5afb2f6c87e5270667a81d7",
+    "images/demo.gif": "f42e93e773297be09dd5755e4dcef4f6104c30b4c443d51f98b84777508c6226",
+    "images/framework.jpg": "634c5b7c5cd4bfe2c429bc585b0409f8685fa39b0682bc7e0877ff45f9725f14",
+    "images/logo.jpg": "d52975325aba0e0099beeb237598f09a8466802aa525f0b8eb039cbc3ee6f660",
+    "images/patch_demo.png": "461697e9ebebbda74b058b9285733d5624b4ee6710d09c448713c0c1ca288786",
+    "images/sample/image_F1.jpg": "4b11b5d7a8a8e4a88f5f16a5426a0a7692e39e5bb45bb03b4ebe5e1606336860",
+    "images/sample/image_F1_result.jpg": "c1c551677250f8cab84f4d50d3f339cbfe74f9757bdefae94505624d54ce7746",
+    "images/sample/image_F2.jpg": "fbbea73450ae9d9bb555c8ccac77bf39d234261fe3be4190e3ed2999690c485f",
+    "images/sample/image_F2_result.jpg": "8d8ed150195cbcacf44cdc1140f5b828858797751c1f26be31f6a05c68ae47ce",
+    "images/sample/image_T1.jpg": "f4455149f488f76205fdee5499ec5261d08ef6279a1cff7b778ea85405331e94",
+    "images/sample/image_T1_result.jpg": "8d796d0b5e64979e979eea34129c0a02bf54d6d70aacf401aadf8826875b4739",
+    "images/\u8bbe\u7f6e\u9608\u503c.png": "46c7473cd50d6968b1a035725cd900bc2ff77963ab85b2103fab1a42be5715b6",
+    "images/\u9759\u9ed8\u6d3b\u4f53APK.jpeg": "5369610df2eaf784daffec9309a2d9094c50300d45d92b3fb4b3253d9c330807",
+    "requirements.txt": "c03091675dea8a2bc1da8ddbd8cc21fc75d1d204912d6431661ff44938ace9eb",
+    "resources/anti_spoof_models/2.7_80x80_MiniFASNetV2.pth": "a5eb02e1843f19b5386b953cc4c9f011c3f985d0ee2bb9819eea9a142099bec0",
+    "resources/anti_spoof_models/4_0_0_80x80_MiniFASNetV1SE.pth": "84ee1d37d96894d5e82de5a57df044ef80a58be2b218b5ed7cdfd875ec2f5990",
+    "resources/detection_model/Widerface-RetinaFace.caffemodel": "d08338a2c207df16a9c566f767fea67fb43ba6fff76ce11e938fe3fabefb9402",
+    "resources/detection_model/deploy.prototxt": "9fe2f141b4baee039ed9442da2833e216af40a6ff3e639e7b39258812bcda808",
+    "saved_logs/jobs/Anti_Spoofing_1_80x80/Jul08_12-51-18 /events.out.tfevents.1594183888.old01": "3809972fe501c551c4e64f0bffbafc4e13b06ee318a6e1679246cf432cab5570",
+    "src/anti_spoof_predict.py": "ce95918e5a19895781877a1ac5c8d3b2d753579c1709664a0ea8f9259ce43f93",
+    "src/data_io/dataset_folder.py": "65ce0db2d63896e0398683ec9ecd68b2b612c452b92d043a39aa5f282427a1e2",
+    "src/data_io/dataset_loader.py": "e734ef37d67a222f8d0966fb02b10afc23e16401c059512c1147721682f47052",
+    "src/data_io/functional.py": "8f779a775e01485800368e8a11104c49c8ba602629927e19ea223b74ff946898",
+    "src/data_io/transform.py": "f63c85790708e7017bbb24ed2d1a834076719fdd19c3fdd8633ed858c55e586f",
+    "src/default_config.py": "d909416d01c1ab8a60704dab6e2fa58ef5d0c98b25e549f05ccd1cade3eb41a7",
+    "src/generate_patches.py": "cd33552d5ca920088143daafceba3c19b7a64bf9aac125241803e1b4af698d65",
+    "src/model_lib/MiniFASNet.py": "e498c4ec5e1ddfaba62b941a126c19d65aa564999f3309661fe43ee8bf38acd7",
+    "src/model_lib/MultiFTNet.py": "0700983ec3798aef720a9b8438ccfa5b0fac8cdbafa6f23cf1d97baf23393f2e",
+    "src/train_main.py": "9c4f9e12b54a6a3009c8649109b7d4d5bf5819dfd7abe42273f9c36ad83c5d2b",
+    "src/utility.py": "cff329a47f4f284465126b19adb080343942a2f2014e862dc85e1e7c2f9d1421",
+    "test.py": "a6a6f053ac899b22607e7e9220742ce882aa4474e0395eebd5a502f3956b233b",
+    "train.py": "fde8463b3f9f4aa544eeebd0657ce45082b8f796faf327a291322aa18c5398dc"
+  },
+  "checkpoint_keys_loaded": {
+    "2.7_80x80_MiniFASNetV2.pth": 334,
+    "4_0_0_80x80_MiniFASNetV1SE.pth": 370
+  },
+  "parameters": {
+    "2.7_80x80_MiniFASNetV2.pth": 434560,
+    "4_0_0_80x80_MiniFASNetV1SE.pth": 433586
+  },
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "Apple M5 Max",
+  "python": "3.12.15",
+  "dependencies": {
+    "numpy": "2.5.3",
+    "torch": "2.7.0",
+    "coremltools": "9.0",
+    "opencv-python-headless": "4.14.0.94"
+  },
+  "package_sha256": {
+    "Data/com.apple.CoreML/model.mlmodel": "aea7c065bd99cfb1585c524afe31fc6115ef18d258199971749bc6f32175ebc2",
+    "Data/com.apple.CoreML/weights/weight.bin": "290400603935be003cea92c5c40c783a350ab7e167fc1bbe32062c55d813a684",
+    "Manifest.json": "b50e50c443fab49de722869f8d4864167c3872794f53b7a520b9c591188ce18f"
+  },
+  "thresholds": {
+    "pytorch_pair_vs_reference_path": 1e-06,
+    "coreml_max_abs_probability_difference": 0.0001,
+    "contract_resize_max_pixel_difference": 1
+  },
+  "random_inputs": {
+    "count": 27,
+    "max_abs_difference": {
+      "cpu_only": 3.159046173095703e-06,
+      "all": 3.159046173095703e-06
+    },
+    "rows": [
+      {
+        "fixture": "black",
+        "pytorch_real": 0.017733562737703323,
+        "pytorch_pair_vs_reference_path": 9.313225746154785e-10,
+        "coreml_cpu_only_max_abs_difference": 6.705522537231445e-08,
+        "coreml_all_max_abs_difference": 6.705522537231445e-08
+      },
+      {
+        "fixture": "midgray",
+        "pytorch_real": 0.4204622507095337,
+        "pytorch_pair_vs_reference_path": 1.4901161193847656e-08,
+        "coreml_cpu_only_max_abs_difference": 3.159046173095703e-06,
+        "coreml_all_max_abs_difference": 3.159046173095703e-06
+      },
+      {
+        "fixture": "white",
+        "pytorch_real": 0.4004060626029968,
+        "pytorch_pair_vs_reference_path": 1.4901161193847656e-08,
+        "coreml_cpu_only_max_abs_difference": 1.2516975402832031e-06,
+        "coreml_all_max_abs_difference": 1.2516975402832031e-06
+      },
+      {
+        "fixture": "uniform_0",
+        "pytorch_real": 0.9918208718299866,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 1.4901161193847656e-08,
+        "coreml_all_max_abs_difference": 1.4901161193847656e-08
+      },
+      {
+        "fixture": "uniform_1",
+        "pytorch_real": 0.9924262166023254,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 5.587935447692871e-09,
+        "coreml_all_max_abs_difference": 5.587935447692871e-09
+      },
+      {
+        "fixture": "uniform_2",
+        "pytorch_real": 0.9947160482406616,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 1.1641532182693481e-08,
+        "coreml_all_max_abs_difference": 1.1641532182693481e-08
+      },
+      {
+        "fixture": "uniform_3",
+        "pytorch_real": 0.994164764881134,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 9.546056389808655e-09,
+        "coreml_all_max_abs_difference": 9.546056389808655e-09
+      },
+      {
+        "fixture": "uniform_4",
+        "pytorch_real": 0.9906003475189209,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 2.7008354663848877e-08,
+        "coreml_all_max_abs_difference": 2.7008354663848877e-08
+      },
+      {
+        "fixture": "uniform_5",
+        "pytorch_real": 0.9962099194526672,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 9.313225746154785e-09,
+        "coreml_all_max_abs_difference": 9.313225746154785e-09
+      },
+      {
+        "fixture": "uniform_6",
+        "pytorch_real": 0.9965249300003052,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 1.6298145055770874e-09,
+        "coreml_all_max_abs_difference": 1.6298145055770874e-09
+      },
+      {
+        "fixture": "uniform_7",
+        "pytorch_real": 0.987868070602417,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 3.259629011154175e-08,
+        "coreml_all_max_abs_difference": 3.259629011154175e-08
+      },
+      {
+        "fixture": "uniform_8",
+        "pytorch_real": 0.9914867877960205,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 5.587935447692871e-09,
+        "coreml_all_max_abs_difference": 5.587935447692871e-09
+      },
+      {
+        "fixture": "uniform_9",
+        "pytorch_real": 0.991014838218689,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 1.1920928955078125e-07,
+        "coreml_all_max_abs_difference": 1.1920928955078125e-07
+      },
+      {
+        "fixture": "uniform_10",
+        "pytorch_real": 0.9974826574325562,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 1.862645149230957e-09,
+        "coreml_all_max_abs_difference": 1.862645149230957e-09
+      },
+      {
+        "fixture": "uniform_11",
+        "pytorch_real": 0.9902527332305908,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 4.563480615615845e-08,
+        "coreml_all_max_abs_difference": 4.563480615615845e-08
+      },
+      {
+        "fixture": "integer_0",
+        "pytorch_real": 0.995894730091095,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 3.259629011154175e-09,
+        "coreml_all_max_abs_difference": 3.259629011154175e-09
+      },
+      {
+        "fixture": "integer_1",
+        "pytorch_real": 0.991070032119751,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 1.1920928955078125e-07,
+        "coreml_all_max_abs_difference": 1.1920928955078125e-07
+      },
+      {
+        "fixture": "integer_2",
+        "pytorch_real": 0.992334246635437,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 1.4901161193847656e-08,
+        "coreml_all_max_abs_difference": 1.4901161193847656e-08
+      },
+      {
+        "fixture": "integer_3",
+        "pytorch_real": 0.9935792684555054,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 1.0244548320770264e-08,
+        "coreml_all_max_abs_difference": 1.0244548320770264e-08
+      },
+      {
+        "fixture": "integer_4",
+        "pytorch_real": 0.9961750507354736,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 1.1920928955078125e-07,
+        "coreml_all_max_abs_difference": 1.1920928955078125e-07
+      },
+      {
+        "fixture": "integer_5",
+        "pytorch_real": 0.99422287940979,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 4.6566128730773926e-09,
+        "coreml_all_max_abs_difference": 4.6566128730773926e-09
+      },
+      {
+        "fixture": "integer_6",
+        "pytorch_real": 0.9849146604537964,
+        "pytorch_pair_vs_reference_path": 2.9802322387695312e-08,
+        "coreml_cpu_only_max_abs_difference": 2.421438694000244e-08,
+        "coreml_all_max_abs_difference": 2.421438694000244e-08
+      },
+      {
+        "fixture": "integer_7",
+        "pytorch_real": 0.9914901852607727,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 1.7695128917694092e-08,
+        "coreml_all_max_abs_difference": 1.7695128917694092e-08
+      },
+      {
+        "fixture": "integer_8",
+        "pytorch_real": 0.9952065348625183,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 1.862645149230957e-09,
+        "coreml_all_max_abs_difference": 1.862645149230957e-09
+      },
+      {
+        "fixture": "integer_9",
+        "pytorch_real": 0.9966043829917908,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 7.916241884231567e-09,
+        "coreml_all_max_abs_difference": 7.916241884231567e-09
+      },
+      {
+        "fixture": "integer_10",
+        "pytorch_real": 0.9880464673042297,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 2.60770320892334e-08,
+        "coreml_all_max_abs_difference": 2.60770320892334e-08
+      },
+      {
+        "fixture": "integer_11",
+        "pytorch_real": 0.9951159358024597,
+        "pytorch_pair_vs_reference_path": 0.0,
+        "coreml_cpu_only_max_abs_difference": 1.1920928955078125e-07,
+        "coreml_all_max_abs_difference": 1.1920928955078125e-07
+      }
+    ]
+  },
+  "sample_images": {
+    "max_abs_difference": {
+      "cpu_only": 1.9073486328125e-06,
+      "all": 1.9073486328125e-06
+    },
+    "rows": [
+      {
+        "image": "image_F1.jpg",
+        "image_width": 480,
+        "image_height": 640,
+        "detector_box_xywh": [
+          178,
+          136,
+          222,
+          224
+        ],
+        "detector_confidence": 0.9925099611282349,
+        "crop_boxes": {
+          "crop27": {
+            "left_top_right_bottom_inclusive": [
+              0,
+              6,
+              479,
+              489
+            ],
+            "scale_used": 2.1576576576576576
+          },
+          "crop40": {
+            "left_top_right_bottom_inclusive": [
+              0,
+              6,
+              479,
+              489
+            ],
+            "scale_used": 2.1576576576576576
+          }
+        },
+        "documented_label": "spoof",
+        "documented_upstream_verdict": {
+          "class": "FakeFace",
+          "score": 0.73
+        },
+        "pytorch": {
+          "real": [
+            0.08434654772281647
+          ],
+          "probs27": [
+            0.08382904529571533,
+            0.0011403665412217379,
+            0.9150305986404419
+          ],
+          "probs40": [
+            0.3010868728160858,
+            0.16755272448062897,
+            0.531360387802124
+          ]
+        },
+        "predicted_class_index": 2,
+        "predicted_label": "spoof",
+        "predicted_class_mean_probability": 0.723195493221283,
+        "prediction_matches_documented_label": true,
+        "coreml_cpu_only": {
+          "real": [
+            0.08434603363275528
+          ],
+          "probs27": [
+            0.08382854610681534,
+            0.0011403682874515653,
+            0.9150310754776001
+          ],
+          "probs40": [
+            0.30108603835105896,
+            0.1675516963005066,
+            0.5313622951507568
+          ]
+        },
+        "coreml_cpu_only_max_abs_difference": 1.9073486328125e-06,
+        "coreml_cpu_only_prediction_matches_documented_label": true,
+        "coreml_all": {
+          "real": [
+            0.08434603363275528
+          ],
+          "probs27": [
+            0.08382854610681534,
+            0.0011403682874515653,
+            0.9150310754776001
+          ],
+          "probs40": [
+            0.30108603835105896,
+            0.1675516963005066,
+            0.5313622951507568
+          ]
+        },
+        "coreml_all_max_abs_difference": 1.9073486328125e-06,
+        "coreml_all_prediction_matches_documented_label": true,
+        "preprocessing_sensitivity": {
+          "contract_resize_max_pixel_difference_vs_opencv": 0.737499999999983,
+          "contract_unrounded_real": 0.08819209784269333,
+          "contract_rounded_real": 0.078981913626194,
+          "area_average_resize_real": 0.07176260650157928,
+          "one_pixel_box_shifts": {
+            "count": 81,
+            "real_min_max": [
+              0.0398331843316555,
+              0.08434603363275528
+            ],
+            "predicted_class_mean_probability_min_max": [
+              0.7024040967226028,
+              0.7979040443897247
+            ],
+            "predicted_classes": [
+              2
+            ]
+          }
+        }
+      },
+      {
+        "image": "image_F2.jpg",
+        "image_width": 480,
+        "image_height": 640,
+        "detector_box_xywh": [
+          120,
+          252,
+          252,
+          256
+        ],
+        "detector_confidence": 0.9913977384567261,
+        "crop_boxes": {
+          "crop27": {
+            "left_top_right_bottom_inclusive": [
+              0,
+              136,
+              479,
+              623
+            ],
+            "scale_used": 1.9007936507936507
+          },
+          "crop40": {
+            "left_top_right_bottom_inclusive": [
+              0,
+              136,
+              479,
+              623
+            ],
+            "scale_used": 1.9007936507936507
+          }
+        },
+        "documented_label": "spoof",
+        "documented_upstream_verdict": {
+          "class": "FakeFace",
+          "score": 0.82
+        },
+        "pytorch": {
+          "real": [
+            0.18128573894500732
+          ],
+          "probs27": [
+            0.00016157166101038456,
+            0.0006388759356923401,
+            0.9991995692253113
+          ],
+          "probs40": [
+            0.002955194329842925,
+            0.3619326055049896,
+            0.6351122260093689
+          ]
+        },
+        "predicted_class_index": 2,
+        "predicted_label": "spoof",
+        "predicted_class_mean_probability": 0.8171558976173401,
+        "prediction_matches_documented_label": true,
+        "coreml_cpu_only": {
+          "real": [
+            0.18128567934036255
+          ],
+          "probs27": [
+            0.00016157196660060436,
+            0.000638874713331461,
+            0.9991995692253113
+          ],
+          "probs40": [
+            0.0029551892075687647,
+            0.3619324862957001,
+            0.6351123452186584
+          ]
+        },
+        "coreml_cpu_only_max_abs_difference": 1.1920928955078125e-07,
+        "coreml_cpu_only_prediction_matches_documented_label": true,
+        "coreml_all": {
+          "real": [
+            0.18128567934036255
+          ],
+          "probs27": [
+            0.00016157196660060436,
+            0.000638874713331461,
+            0.9991995692253113
+          ],
+          "probs40": [
+            0.0029551892075687647,
+            0.3619324862957001,
+            0.6351123452186584
+          ]
+        },
+        "coreml_all_max_abs_difference": 1.1920928955078125e-07,
+        "coreml_all_prediction_matches_documented_label": true,
+        "preprocessing_sensitivity": {
+          "contract_resize_max_pixel_difference_vs_opencv": 0.7250000000000512,
+          "contract_unrounded_real": 0.1936141699552536,
+          "contract_rounded_real": 0.17381948232650757,
+          "area_average_resize_real": 0.05446557328104973,
+          "one_pixel_box_shifts": {
+            "count": 81,
+            "real_min_max": [
+              0.10250109434127808,
+              0.22596216201782227
+            ],
+            "predicted_class_mean_probability_min_max": [
+              0.7720561921596527,
+              0.8959380090236664
+            ],
+            "predicted_classes": [
+              2
+            ]
+          }
+        }
+      },
+      {
+        "image": "image_T1.jpg",
+        "image_width": 480,
+        "image_height": 640,
+        "detector_box_xywh": [
+          105,
+          147,
+          207,
+          214
+        ],
+        "detector_confidence": 0.9835947155952454,
+        "crop_boxes": {
+          "crop27": {
+            "left_top_right_bottom_inclusive": [
+              0,
+              6,
+              479,
+              501
+            ],
+            "scale_used": 2.314009661835749
+          },
+          "crop40": {
+            "left_top_right_bottom_inclusive": [
+              0,
+              6,
+              479,
+              501
+            ],
+            "scale_used": 2.314009661835749
+          }
+        },
+        "documented_label": "real",
+        "documented_upstream_verdict": {
+          "class": "RealFace",
+          "score": 0.99
+        },
+        "pytorch": {
+          "real": [
+            0.9947686791419983
+          ],
+          "probs27": [
+            0.00010470777488080785,
+            0.9928066730499268,
+            0.00708860345184803
+          ],
+          "probs40": [
+            1.666217031015549e-05,
+            0.9967306852340698,
+            0.0032526955474168062
+          ]
+        },
+        "predicted_class_index": 1,
+        "predicted_label": "real",
+        "predicted_class_mean_probability": 0.9947686791419983,
+        "prediction_matches_documented_label": true,
+        "coreml_cpu_only": {
+          "real": [
+            0.9947686791419983
+          ],
+          "probs27": [
+            0.00010470837878528982,
+            0.9928066730499268,
+            0.007088579703122377
+          ],
+          "probs40": [
+            1.6662044799886644e-05,
+            0.9967306852340698,
+            0.003252676920965314
+          ]
+        },
+        "coreml_cpu_only_max_abs_difference": 2.3748725652694702e-08,
+        "coreml_cpu_only_prediction_matches_documented_label": true,
+        "coreml_all": {
+          "real": [
+            0.9947686791419983
+          ],
+          "probs27": [
+            0.00010470837878528982,
+            0.9928066730499268,
+            0.007088579703122377
+          ],
+          "probs40": [
+            1.6662044799886644e-05,
+            0.9967306852340698,
+            0.003252676920965314
+          ]
+        },
+        "coreml_all_max_abs_difference": 2.3748725652694702e-08,
+        "coreml_all_prediction_matches_documented_label": true,
+        "preprocessing_sensitivity": {
+          "contract_resize_max_pixel_difference_vs_opencv": 0.7000000000005571,
+          "contract_unrounded_real": 0.9942158460617065,
+          "contract_rounded_real": 0.9953281879425049,
+          "area_average_resize_real": 0.9784155488014221,
+          "one_pixel_box_shifts": {
+            "count": 81,
+            "real_min_max": [
+              0.9896084070205688,
+              0.9962168335914612
+            ],
+            "predicted_class_mean_probability_min_max": [
+              0.9896084368228912,
+              0.9962168335914612
+            ],
+            "predicted_classes": [
+              1
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "crop_box_examples": [
+    {
+      "name": "worked_example_1280x720",
+      "image_width": 1280,
+      "image_height": 720,
+      "face_box_xywh": [
+        500,
+        200,
+        240,
+        280
+      ],
+      "crop27": {
+        "scale_used": 2.567857142857143,
+        "left_top_right_bottom_inclusive": [
+          311,
+          0,
+          928,
+          719
+        ],
+        "width": 618,
+        "height": 720
+      },
+      "crop40": {
+        "scale_used": 2.567857142857143,
+        "left_top_right_bottom_inclusive": [
+          311,
+          0,
+          928,
+          719
+        ],
+        "width": 618,
+        "height": 720
+      }
+    },
+    {
+      "name": "small_centred_face",
+      "image_width": 1280,
+      "image_height": 720,
+      "face_box_xywh": [
+        590,
+        300,
+        100,
+        120
+      ],
+      "crop27": {
+        "scale_used": 2.7,
+        "left_top_right_bottom_inclusive": [
+          505,
+          198,
+          775,
+          522
+        ],
+        "width": 271,
+        "height": 325
+      },
+      "crop40": {
+        "scale_used": 4.0,
+        "left_top_right_bottom_inclusive": [
+          440,
+          120,
+          840,
+          600
+        ],
+        "width": 401,
+        "height": 481
+      }
+    },
+    {
+      "name": "face_at_left_edge",
+      "image_width": 1280,
+      "image_height": 720,
+      "face_box_xywh": [
+        10,
+        250,
+        150,
+        180
+      ],
+      "crop27": {
+        "scale_used": 2.7,
+        "left_top_right_bottom_inclusive": [
+          0,
+          96,
+          405,
+          583
+        ],
+        "width": 406,
+        "height": 488
+      },
+      "crop40": {
+        "scale_used": 3.9944444444444445,
+        "left_top_right_bottom_inclusive": [
+          0,
+          0,
+          599,
+          719
+        ],
+        "width": 600,
+        "height": 720
+      }
+    },
+    {
+      "name": "face_at_bottom_right",
+      "image_width": 1280,
+      "image_height": 720,
+      "face_box_xywh": [
+        1100,
+        560,
+        150,
+        150
+      ],
+      "crop27": {
+        "scale_used": 2.7,
+        "left_top_right_bottom_inclusive": [
+          874,
+          314,
+          1279,
+          719
+        ],
+        "width": 406,
+        "height": 406
+      },
+      "crop40": {
+        "scale_used": 4.0,
+        "left_top_right_bottom_inclusive": [
+          679,
+          119,
+          1279,
+          719
+        ],
+        "width": 601,
+        "height": 601
+      }
+    },
+    {
+      "name": "face_at_top_edge",
+      "image_width": 1280,
+      "image_height": 720,
+      "face_box_xywh": [
+        600,
+        5,
+        120,
+        140
+      ],
+      "crop27": {
+        "scale_used": 2.7,
+        "left_top_right_bottom_inclusive": [
+          498,
+          0,
+          822,
+          378
+        ],
+        "width": 325,
+        "height": 379
+      },
+      "crop40": {
+        "scale_used": 4.0,
+        "left_top_right_bottom_inclusive": [
+          420,
+          0,
+          900,
+          560
+        ],
+        "width": 481,
+        "height": 561
+      }
+    }
+  ],
+  "latency_one_call": {
+    "cpu_only": {
+      "runs": 50,
+      "warmup_runs": 5,
+      "median_ms": 0.8198124851332977,
+      "mean_ms": 0.8177731989417225,
+      "p95_ms": 0.8458019074168988,
+      "min_ms": 0.7801660103723407,
+      "max_ms": 0.8687500085216016
+    },
+    "all": {
+      "runs": 50,
+      "warmup_runs": 5,
+      "median_ms": 0.8206869970308617,
+      "mean_ms": 0.8226449793437496,
+      "p95_ms": 0.8554437576094642,
+      "min_ms": 0.7867500244174153,
+      "max_ms": 0.878125021699816
+    }
+  },
+  "planned_compute_devices": {
+    "cpu_only": {
+      "MLCPUComputeDevice": 224
+    },
+    "all": {
+      "MLCPUComputeDevice": 224
+    }
+  }
+}

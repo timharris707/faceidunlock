@@ -1,0 +1,13 @@
+.build/
+.DS_Store
+.model-tools/
+*.xcuserstate
+
+.worktrees/
+
+__pycache__/
+*.pyc
+
+# Session handoff (team-workflow pack): untracked by contract
+.claude/handoff.md
+.claude/settings.local.json

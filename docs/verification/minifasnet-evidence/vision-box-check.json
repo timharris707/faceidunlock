@@ -1,0 +1,113 @@
+{
+  "note": "Vision VNDetectFaceRectanglesRequest revision 3 on the cv2-oriented (EXIF 6 applied, 480x640) sample pixels; boxes converted to top-left pixel coordinates, then to integers as CONTRACT.md step 1 says: x=int(left), y=int(top), w=int(width+1), h=int(height+1).",
+  "rows": [
+    {
+      "image": "image_F1.jpg",
+      "label": "spoof",
+      "retinaface_box_xywh": [
+        178,
+        136,
+        222,
+        224
+      ],
+      "vision_rev3_box_xywh": [
+        150,
+        145,
+        210,
+        210
+      ],
+      "vision_box_raw": [
+        150.17470836639404,
+        145.42537689208984,
+        209.32442665100098,
+        209.32443618774414
+      ],
+      "real_with_retinaface_box": 0.08434603363275528,
+      "real_with_vision_box": 0.03581053391098976,
+      "crop27_with_vision_box": [
+        0,
+        10,
+        479,
+        489
+      ],
+      "crop27_with_retinaface_box": [
+        0,
+        6,
+        479,
+        489
+      ]
+    },
+    {
+      "image": "image_F2.jpg",
+      "label": "spoof",
+      "retinaface_box_xywh": [
+        120,
+        252,
+        252,
+        256
+      ],
+      "vision_rev3_box_xywh": [
+        108,
+        252,
+        268,
+        268
+      ],
+      "vision_box_raw": [
+        108.54979991912842,
+        252.52479553222656,
+        267.2072696685791,
+        267.20727920532227
+      ],
+      "real_with_retinaface_box": 0.18128567934036255,
+      "real_with_vision_box": 0.20854908227920532,
+      "crop27_with_vision_box": [
+        0,
+        146,
+        479,
+        625
+      ],
+      "crop27_with_retinaface_box": [
+        0,
+        136,
+        479,
+        623
+      ]
+    },
+    {
+      "image": "image_T1.jpg",
+      "label": "real",
+      "retinaface_box_xywh": [
+        105,
+        147,
+        207,
+        214
+      ],
+      "vision_rev3_box_xywh": [
+        134,
+        162,
+        178,
+        178
+      ],
+      "vision_box_raw": [
+        134.5580005645752,
+        162.24050521850586,
+        177.3358154296875,
+        177.3358154296875
+      ],
+      "real_with_retinaface_box": 0.9947686791419983,
+      "real_with_vision_box": 0.9790099859237671,
+      "crop27_with_vision_box": [
+        0,
+        11,
+        479,
+        490
+      ],
+      "crop27_with_retinaface_box": [
+        0,
+        6,
+        479,
+        501
+      ]
+    }
+  ]
+}
